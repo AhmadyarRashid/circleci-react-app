@@ -6,8 +6,8 @@ jobs:
     docker:
       - image: node
         auth:
-          username: ubuntu
-          password: $MY_VIKOR_PASS
+          username: ubuntu@115.186.182.54
+          password: "#@#$sldSUDFWOD"
 
     working_directory: ~/repo
 
