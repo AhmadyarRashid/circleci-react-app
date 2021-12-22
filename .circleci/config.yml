@@ -26,9 +26,7 @@ jobs:
 
       - run: yarn test # Run tests.
       - run: yarn build # Build a production build to check if any warnings come up.
-      - run:
-        name: Deploy over SSH
-        command: ssh -p 22 ubuntu@115.186.182.54 "cd ./projects/; git pull;";
+      - run: ssh -p 22 ubuntu@115.186.182.54 "cd ./projects/; git pull;";
   
   deploy-dev:
     docker:
