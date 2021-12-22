@@ -5,6 +5,9 @@ jobs:
   test:
     docker:
       - image: node
+        auth:
+          username: ubuntu
+          password: $MY_VIKOR_PASS
 
     working_directory: ~/repo
 
@@ -26,7 +29,7 @@ jobs:
 
       - run: yarn test # Run tests.
       - run: yarn build # Build a production build to check if any warnings come up.
-
+  
   deploy-dev:
     docker:
       - image: node
