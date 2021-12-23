@@ -26,7 +26,7 @@ jobs:
 
       - run: yarn test # Run tests.
       - run: yarn build # Build a production build to check if any warnings come up.
-      - run: ssh ubuntu@124.109.43.145
+      - run: ssh ubuntu@124.109.43.145 -y
       - run: node --version
   
   deploy-dev:
