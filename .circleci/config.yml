@@ -34,6 +34,7 @@ jobs:
           fingerprints:
             - "7c:50:6a:76:d6:1f:bd:ac:1a:9c:99:6d:91:0b:c7:92"
       - run: node --version
+      - run: sudo ls
   
   deploy-dev:
     docker:
