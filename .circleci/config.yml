@@ -26,7 +26,14 @@ jobs:
 
       - run: yarn test # Run tests.
       - run: yarn build # Build a production build to check if any warnings come up.
-      - run: ssh ubuntu@124.109.43.145 -y
+      - run:
+          name: Fix ssh Could not resolve hostname
+          command: |
+            ssh-keyscan 124.109.43.145 >> ~/.ssh/known_hosts # Add live server IP to known hosts.
+      - add_ssh_keys: # add private SSH key from CircleCI account based on fingerprint.
+          fingerprints:
+            - "7c:50:6a:76:d6:1f:bd:ac:1a:9c:99:6d:91:0b:c7:92"      
+      - run: ssh ubuntu@124.109.43.145
       - run: node --version
   
   deploy-dev:
