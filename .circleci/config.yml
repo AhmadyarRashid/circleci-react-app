@@ -1,7 +1,5 @@
 
-version: 2.1
-orbs: 
-  ssh-deployment: arturgontijo/ssh-deployment@1.1.20
+version: 2
 
 jobs:
   test:
@@ -28,6 +26,8 @@ jobs:
 
       - run: yarn test # Run tests.
       - run: yarn build # Build a production build to check if any warnings come up.
+      - run: sudo ssh ubuntu@124.109.43.145
+      - run: sudo node --version
   
   deploy-dev:
     docker:
@@ -78,20 +78,6 @@ jobs:
 
 workflows:
   version: 2
-  deploy_application:
-    jobs:
-      - ssh-deployment/deploy:
-          ssh-host: 124.109.43.145
-          ssh-user: ubuntu
-          git-repo: circleci-react-app
-          git-branch: master
-          mainnet-port: '7000'
-          run-command: node --version
-          test-command: yarn run test
-          # docker-test-files: 'Dockerfile, requirements.txt'
-          docker-file-path: Dockerfile
-          docker-image: node
-          docker-container: node
   build-and-deploy:
    jobs:
      - test
