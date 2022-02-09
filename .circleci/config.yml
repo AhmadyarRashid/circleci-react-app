@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh ubuntu@115.186.182.54
+            ssh $SSH_USER@$SSH_HOST
       - run: ls
 
 #      - restore_cache:
