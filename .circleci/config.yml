@@ -42,7 +42,7 @@ jobs:
 #          name: Deploy Over SSH
 #          command: |
 #            ssh $SSH_USER@$SSH_HOST
-      - run: sudo ls
+      - run: ls
 
 #      - restore_cache:
 #          keys:
