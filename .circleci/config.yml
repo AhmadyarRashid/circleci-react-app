@@ -38,10 +38,11 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "a6:2c:6d:9c:76:d7:a3:b8:9e:b5:e6:6e:f4:80:be:3b"
-      - run:
-          name: Deploy Over SSH
-          command: |
-            ssh $SSH_USER@$SSH_HOST
+#      - run:
+#          name: Deploy Over SSH
+#          command: |
+#            ssh $SSH_USER@$SSH_HOST
+      - run: sudo ls
 
 #      - restore_cache:
 #          keys:
