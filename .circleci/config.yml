@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+            ssh 115.186.182.54@#@#$sldSUDFWOD
       - run: ls
 
 #      - restore_cache:
